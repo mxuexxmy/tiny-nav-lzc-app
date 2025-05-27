@@ -1,0 +1,32 @@
+{
+  "name": "tiny nav",
+  "package": "xyz.mxue.tinynav",
+  "description": "简单的个人导航网站",
+  "homepage": "https://github.com/hanxi/tiny-nav",
+  "author": "hanxi",
+  "app_features": [
+    "multi_instance"
+  ],
+  "subdomain": "tinynav",
+  "version": "0.0.1",
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "tiny-nav_8080_58080": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_hanxi_tiny-nav": {
+    "originalImage": "hanxi/tiny-nav",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/mxuexxmy/hanxi/tiny-nav:88c0cd6eff8bc0ce",
+    "timestamp": "2025-04-13T15:47:42.445Z"
+  },
+  "tiny-nav_volume_/app/data_action": "emptyDir",
+  "tiny-nav_volume_/app/data_location": "app_data"
+}

@@ -1,0 +1,24 @@
+lzc-sdk-version: "0.1"
+name: tiny nav
+package: xyz.mxue.tinynav
+version: 0.0.1
+description: 简单的个人导航网站
+homepage: https://github.com/hanxi/tiny-nav
+author: hanxi
+application:
+  subdomain: tinynav
+  background_task: false
+  multi_instance: true
+  gpu_accel: false
+  kvm_accel: false
+  usb_accel: false
+  routes:
+    - /=http://tiny-nav.xyz.mxue.tinynav.lzcapp:58080/
+services:
+  tiny-nav:
+    image: registry.lazycat.cloud/mxuexxmy/hanxi/tiny-nav:88c0cd6eff8bc0ce
+    environment:
+      - NAV_USERNAME=${LAZYCAT_APP_DEPLOY_UID}
+      - NAV_PASSWORD=${LAZYCAT_APP_DEPLOY_UID}
+    binds:
+      - /lzcapp/var/data:/app/data
